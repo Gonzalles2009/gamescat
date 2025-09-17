@@ -13,7 +13,7 @@ export async function initializeFighterGame(parent: HTMLElement): Promise<Phaser
     physics: {
       default: 'arcade',
       arcade: {
-        gravity: { y: GAME_CONFIG.GRAVITY },
+        gravity: { x: 0, y: GAME_CONFIG.GRAVITY },
         debug: false // Disabled debug mode for cleaner look
       }
     },

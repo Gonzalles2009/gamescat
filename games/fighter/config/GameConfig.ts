@@ -58,8 +58,7 @@ export const ANIMATION_CONFIGS = {
   LOW_HIGH_KICK: { frameRate: 20, repeat: 0, damage: 22, cooldown: 900 },
   
   // Defensive
-  HIT: { frameRate: 12, repeat: 0 },
-  BLOCK: { frameRate: 6, repeat: -1 }
+  HIT: { frameRate: 12, repeat: 0 }
 } as const
 
 export const ATTACK_TYPES = {

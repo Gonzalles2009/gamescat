@@ -18,7 +18,8 @@ export default function FighterPage() {
         
         // Динамически импортируем игру только на клиенте
         const { initializeFighterGame } = await import('@/games/fighter/FighterGame')
-        const game = await initializeFighterGame(gameContainerRef.current)
+        const container = gameContainerRef.current as HTMLElement
+        const game = await initializeFighterGame(container)
         gameInstanceRef.current = game
 
         // Game loaded successfully
