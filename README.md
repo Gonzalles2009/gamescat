@@ -1,9 +1,11 @@
 # GamesCat
 
-Modern web project with a browser fighting game built on Next.js 14, TypeScript, Tailwind CSS, and Phaser.js. Includes Player vs Player and Player vs Bot modes, round system (best-of-3), blocking, multiple attacks with animations, health UI, timers, and a start menu.
+Modern web collection of browser games built on Next.js 14, TypeScript, Tailwind CSS, and Phaser.js.
+
+Status: the first title is a 2D Fighter; more games will be added to the collection.
 
 - Repo: [`github.com/Gonzalles2009/gamescat`](https://github.com/Gonzalles2009/gamescat)
-- App structure: Next.js App Router (`/app`) with a game page at `/games/fighter`
+- App structure: Next.js App Router (`/app`) with standalone pages for each game under `/games/*`
 
 ## Tech
 - Next.js 14 (App Router) + React 18
@@ -37,16 +39,20 @@ npm run start
 ## Project Layout
 
 - `app/` — Next.js routes and UI
-  - `app/page.tsx` — landing
-  - `app/games/fighter/page.tsx` — fighter game page (client-only)
-- `games/fighter/` — Phaser game code
-  - `FighterGame.ts` — Phaser initialization
-  - `config/GameConfig.ts` — constants (screen, physics, inputs, combat)
-  - `scenes/PreloadScene.ts` — assets (demo sprites), loading
-  - `scenes/GameScene.ts` — main scene, UI, input, bot AI, rounds
-  - `entities/Fighter.ts` — fighter logic (states, attacks, block, hitboxes)
+  - `app/page.tsx` — landing (catalog)
+  - `app/games/<game>/page.tsx` — per-game React host that mounts Phaser
+- `games/<game>/` — Phaser code for each game
+  - `fighter/` — the Fighter game (see details below)
 
-## Gameplay
+### Fighter game (current)
+
+- `games/fighter/FighterGame.ts` — Phaser initialization
+- `games/fighter/config/GameConfig.ts` — constants (screen, physics, inputs, combat)
+- `games/fighter/scenes/PreloadScene.ts` — assets (demo sprites), loading
+- `games/fighter/scenes/GameScene.ts` — main scene, UI, input, bot AI, rounds
+- `games/fighter/entities/Fighter.ts` — fighter logic (states, attacks, block, hitboxes)
+
+## Gameplay (Fighter)
 
 - Modes: Main menu → choose `Player vs Player` or `Player vs Bot`
 - Rounds: best of 3 (2 wins to take the match)
@@ -75,7 +81,7 @@ npm run start
 - Phaser runs only on client. The game page uses dynamic, `ssr: false` loading.
 - Debug rectangles were removed; physics debug is off by default.
 
-## Development Tips
+## Development Tips (Fighter)
 - Configs: `games/fighter/config/GameConfig.ts`
 - Animations: created in `GameScene.createCombatAnimations()`
 - Attacks/Hitboxes: `Fighter.performAnimatedAttack()` and `createAttackBox()`
@@ -94,6 +100,25 @@ npm run start
 
 ## License
 This project is for demonstration/learning. Add a license if you plan to distribute.
+
+---
+
+## Adding a new game to the catalog
+
+1) Create folders and a Next.js page:
+```
+games/<newgame>/
+  <NewGame>Game.ts
+  scenes/...
+  config/...
+app/games/<newgame>/page.tsx
+```
+
+2) In `app/games/<newgame>/page.tsx` mount Phaser client-side (similar to Fighter page) and call your `<NewGame>Game` initializer.
+
+3) Add the game to the landing/catalog (link to `/games/<newgame>`).
+
+4) Keep code and strings in English, follow strict TypeScript and clean-code guidelines (see `PROJECT_GUIDELINES.md`).
 
 # GamesCat - Browser Fighting Games
 
