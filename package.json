@@ -1,13 +1,16 @@
 {
   "name": "gamescat",
   "version": "1.0.0",
-  "description": "Browser-based games platform with fighting games",
+  "description": "Modern browser games platform featuring fighting, tower defense, and more",
   "keywords": [
     "games",
     "browser-games",
     "fighting",
+    "tower-defense",
     "phaser",
-    "nextjs"
+    "nextjs",
+    "typescript",
+    "gaming-platform"
   ],
   "license": "MIT",
   "author": "",
@@ -15,9 +18,14 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf .next out dist",
+    "test": "echo \"No tests specified\" && exit 0",
+    "validate": "npm run type-check && npm run lint",
+    "prepare": "npm run validate"
   },
   "dependencies": {
     "framer-motion": "^10.16.0",
