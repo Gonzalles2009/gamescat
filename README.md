@@ -249,16 +249,7 @@ gamescat/
 
 MIT License - see LICENSE file for details.
 
-## 🎲 Game Features Roadmap
-
-- [x] Basic 2D Fighting Game
-- [ ] Character Selection
-- [ ] Special Moves System
-- [ ] Sound Effects & Music
-- [ ] Multiplayer Support
-- [ ] Tournament Mode
-- [ ] Custom Character Creation
-
 ---
 
 Built with ❤️ using modern web technologies.
+

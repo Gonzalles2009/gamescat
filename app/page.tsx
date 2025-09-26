@@ -22,29 +22,61 @@ export default function HomePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Experience epic 2D fighting games in your browser
+          Play amazing browser games - from fighting to strategy and beyond
         </motion.p>
         
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <GameCard 
-            title="Street Fighter Style"
-            description="Classic 2D fighting with combos and special moves"
+            title="Fighting Arena"
+            description="Master combos and special moves in epic 2D battles"
             href="/games/fighter"
             status="Available"
             gradient="from-game-primary to-red-600"
           />
           
           <GameCard 
-            title="More Games"
-            description="Additional fighting games coming soon"
-            href="#"
+            title="Tower Defense"
+            description="Build towers, defend your base, survive endless waves"
+            href="/games/tower-defense"
+            status="Available"
+            gradient="from-game-secondary to-blue-600"
+          />
+
+          <GameCard 
+            title="Puzzle Quest"
+            description="Mind-bending puzzles and brain teasers await"
+            href="/games/puzzle"
             status="Coming Soon"
-            gradient="from-gray-600 to-gray-700"
+            gradient="from-purple-600 to-pink-600"
+          />
+
+          <GameCard 
+            title="Space Shooter"
+            description="Blast through asteroids and alien fleets"
+            href="/games/shooter"
+            status="Coming Soon"
+            gradient="from-cyan-600 to-blue-800"
+          />
+
+          <GameCard 
+            title="Racing Circuit"
+            description="High-speed racing with customizable vehicles"
+            href="/games/racing"
+            status="Coming Soon"
+            gradient="from-orange-600 to-yellow-600"
+          />
+
+          <GameCard 
+            title="RPG Adventure"
+            description="Epic quests, character progression, and exploration"
+            href="/games/rpg"
+            status="Coming Soon"
+            gradient="from-green-600 to-emerald-800"
           />
         </motion.div>
         
@@ -54,7 +86,7 @@ export default function HomePage() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          Built with Next.js, Phaser.js, and TypeScript
+          A diverse gaming platform built with Next.js, Phaser.js, and TypeScript
         </motion.div>
       </div>
     </div>
